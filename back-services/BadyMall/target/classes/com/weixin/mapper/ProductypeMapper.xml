@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weixin.mapper.ProductypeMapper">
+    <resultMap type="com.weixin.bean.Productype" id="baseResultMap">
+        <id column="ptid" property="ptid"></id>
+        <result column="ptname" property="ptname"></result>
+        <result column="ptUrl" property="ptUrl"></result>
+    </resultMap>
+    <select id="listModel"  resultMap="baseResultMap">
+        <![CDATA[
+			select * from productype
+		  	]]>
+    </select>
+    <select id="getModel" parameterType="java.lang.Integer" resultType="com.weixin.bean.Productype">
+        <![CDATA[
+			select * from productype
+		]]>
+        <where>
+            ptid = #{ptid}
+        </where>
+    </select>
+
+    <update id="updateModel" parameterType="com.weixin.bean.Productype">
+        update productype
+        <trim prefix="set" suffixOverrides=",">
+            <if test="ptname!=null">ptname=#{ptname},</if>
+            <if test="ptUrl!=null">ptUrl=#{ptUrl},</if>
+        </trim>
+    </update>
+
+    <delete id="deleteModel" parameterType="com.weixin.bean.Productype">
+        <![CDATA[
+			 delete from productype WHERE ptid=#{ptid}
+		]]>
+    </delete>
+</mapper>

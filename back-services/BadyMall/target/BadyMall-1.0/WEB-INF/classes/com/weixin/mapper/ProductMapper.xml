@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weixin.mapper.ProductMapper">
+    <resultMap type="com.weixin.bean.Product" id="baseResultMap">
+        <id column="pid" property="pid"></id>
+        <result column="pname" property="pname"></result>
+        <result column="pdescribe" property="pdescribe"></result>
+        <result column="pvideo" property="pvideo"></result>
+        <result column="pcostprice" property="pcostprice"></result>
+        <result column="psellprice" property="psellprice"></result>
+        <result column="pcount" property="pcount"></result>
+        <result column="pstock" property="pstock"></result>
+        <result column="premark" property="premark"></result>
+        <result column="ptid" property="ptid"></result>
+    </resultMap>
+    <select id="listModel"  resultMap="baseResultMap">
+        <![CDATA[
+			select * from product
+		  	]]>
+    </select>
+    <!--根据产品类型查询产品-->
+    <select id="listProductByPtid"  resultMap="baseResultMap">
+        <![CDATA[
+			select * from product
+		  	]]>
+        <where>
+            ptid=#{ptid}
+        </where>
+    </select>
+    <select id="countProductByPtid" parameterType="java.lang.Integer" resultType="java.lang.Long">
+          <![CDATA[
+			select count(*) from product
+		  	]]>
+        <where>
+            ptid=#{ptid}
+        </where>
+    </select>
+    <select id="getModel" parameterType="java.lang.Integer" resultType="com.weixin.bean.Product">
+        <![CDATA[
+			select * from product
+		]]>
+        <where>
+            pid = #{pid}
+        </where>
+    </select>
+
+    <!--根据产品pname模糊查询产品-->
+    <select id="listProductByPname" parameterType="java.lang.String" resultMap="baseResultMap">
+        select * from product
+            <where>
+            1=1
+            <if test="pname != null and pname !='' ">
+                and pname like CONCAT(CONCAT('%', #{pname}), '%')
+            </if>
+            </where>
+    </select>
+
+    <update id="updateModel" parameterType="com.weixin.bean.Product">
+        update product
+        <trim prefix="set" suffixOverrides=",">
+            <if test="pname!=null">pname=#{pname},</if>
+            <if test="pdescribe!=null">pdescribe=#{ptname},</if>
+            <if test="pUrl!=null">pUrl=#{pUrl},</if>
+            <if test="pcostprice!=0.00">pcostprice=#{pcostprice},</if>
+            <if test="psellprice!=0.00">psellprice=#{psellprice},</if>
+            <if test="pcount!=null">pcount=#{pcount},</if>
+            <if test="ptid!=ptid">ptid=#{ptid},</if>
+        </trim>
+    </update>
+
+    <delete id="deleteModel" parameterType="com.weixin.bean.Product">
+        <![CDATA[
+			 delete from product WHERE pid=#{pid}
+		]]>
+    </delete>
+</mapper>

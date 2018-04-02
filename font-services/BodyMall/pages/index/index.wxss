@@ -1,0 +1,221 @@
+.swiper-item{
+  display: block;
+}
+.slide-image {
+  width: 100%;
+}
+swiper {
+  width: 100%;
+}
+swiper image{
+  width: 100%;
+  height: 230px
+}
+.category {
+  padding: 15px 0 10px 0;
+  overflow: auto;
+  background-color: #FFF;
+  margin-bottom: 10px;
+}
+.category_item {
+  width: 25%;
+  float: left;
+  margin-bottom: 10px;
+}
+.icon_wrap {
+  width: 40px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+.index_icon {
+  width: 40px;
+  height: 40px;
+}
+.singal_item {
+  text-align: center;
+  background-color: #FFF;
+  margin-bottom: 10px;
+}
+.singal_item_title {
+  text-align: center;
+  padding: 12px;
+  font-size: 16px;
+}
+.singal_item_image {
+  line-height: 0;
+}
+.commen_title {
+  padding: 10px;
+  background-color: #fff;
+  font-size: 16px;
+  border-bottom: 1px solid #E9E9E9;
+}
+.single_goods_image {
+  width: 80px;
+  height: 80px;
+}
+.single_goods {
+  position: relative;
+  height: 100px;
+  background-color: #FFF;
+  padding-left: 100px;
+  border-bottom: 1px solid #E7E7EB;
+}
+.single_image_wrap {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.single_goods_infor {
+  padding: 10px 0;
+  position: relative;
+  height: 80px;
+}
+.single_goods_name {
+  font-size: 14px;
+}
+
+.carImg {
+  width: 20px;
+  height: 20px;
+}
+.shopFrame{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #E7E7EB;
+}
+.shopFrame image{
+  width: 150px;
+  height: 80px;
+  margin-right: 25px
+}
+.newProduct {
+  padding: 1px 0 1px 0;
+  background-color: #FFF;
+  margin-bottom: 10px;
+}
+.newProduct_datail {
+  width: 50%;
+  float: left;
+  justify-content:space-around;
+  margin-bottom: 10px;
+  
+  height: 180px;
+}
+.productImage {
+  width: 40px;
+  margin-left: 15px;
+  border: solid gold silver;
+  margin-bottom: 5px;
+}
+.product_image{
+  width: 120px;
+  height: 100px;
+}
+.product_text{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.ProductCount{
+  display: flex;
+  flex-direction: row;
+}
+.recomment_icon{
+   width: 25px;
+  height: 23px;
+}
+.recomendImg{
+  float: left;
+  margin-right: 10px
+}
+/*使屏幕变暗  */
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+/*对话框 */
+.commodity_attr_box {
+  display: flex;
+  flex-direction: column;
+  height: 500rpx;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+}
+.deleLabrl{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.car_item_bot {
+  
+   padding: 0 10px 0 0;
+   height: 28px;
+   line-height: 28px;
+}
+.car_item_btn {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 28px;
+    border: 1px solid #B2B2B2;
+    color: #929292;
+}
+.car_item_num {
+    display: inline-block;
+    width: 40px;
+    height: 26px;
+    text-align: center;
+    line-height: 28px;
+    border-top: 1px solid #B2B2B2;
+    border-bottom: 1px solid #B2B2B2;
+    font-size: 14px;
+    position: relative;
+    color: #929292;
+}
+
+.countall{
+ display: flex;
+ flex-direction: row;
+ margin-top: 15px;
+ margin-left: 10px;
+}
+.countview{
+  float: right;
+  margin-left:120px;
+}
+.goods_half_half {
+  width: 50%;
+  float: left;
+  height: 50px;
+  font-size: 12px;
+  line-height: 50px;
+  text-align: center;
+  color: #FFF;
+}
+.orange {
+  background-color: #FFA500;
+}
+.red {
+  background-color: #ff3300;
+}
+.btntype{
+  margin-top: 25px
+}

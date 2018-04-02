@@ -1,0 +1,140 @@
+<view>
+  <swiper indicator-dots="{{indicatorDots}}" 
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="category">
+  <view class="category_item" wx:for="{{iconArray}}" wx:key="{{item.ptid}}">
+    <view class="category_item_wrap" wx:if="{{index <8}}">
+      <view class="icon_wrap">
+        <image src="{{item.ptUrl}}" class="index_icon"></image>
+      </view>
+      <view class="category_item_text">
+        <text>{{item.ptname}}</text>
+      </view>
+    </view>
+    <view wx:else></view>
+  </view>
+</view>
+<!--精品推荐-->
+<view class="Recommend">
+  <view class="commen_title">
+      <view class="recomendImg">
+        <image src="{{recomendImg}}" class="recomment_icon" ></image>
+      </view>
+      <text>{{recommendText}}</text>
+      <view class='carImgWrap' > 
+          <image src="{{recommentIcon}}" class="recomment_icon" bindtap='RecomentList'></image>
+      </view> 
+  </view>
+  <view class="singal_item" wx:for="{{recommendArray}}">
+    <view class="singal_item_image" wx:if="{{index <1}}">
+      <image bindload="cusImageLoad" src="{{item.productImg[0].piurl}}" data-pid="{{item.pid}}"   bindtap='recommentClik' style="width: {{imageWidth}};height: {{imageHeight}}"></image>
+    </view>
+    <view wx:else></view>
+  </view>
+</view>
+<!--热销宝贝-->
+<view>
+  <view class="singal_item_title">
+    <text>{{shopsHostText}}</text>
+  </view>
+  <view class="single_goods" wx:for="{{shopsHostArray}}">
+    <view wx:if="{{index < 6}}">
+        <view class="single_image_wrap" >
+          <image src="{{item.productImg[0].piurl}}" data-pid="{{item.pid}}"   bindtap='recommentClik' class="single_goods_image"></image>
+        </view>
+        <view class="single_goods_infor">
+            <view class="single_goods_name">
+              <text>{{item.pdescribe}}</text>
+            </view>
+            <view class="single_goods_address">
+              <text>{{item.pname}}</text>
+            </view>
+            <view class="single_goods_price">
+              <text>¥{{item.psellprice}}</text>
+              <view class="carImgWrap">
+                <image src="../../image/car.png" class="carImg" bindtap='chooseSezi' data-pid="{{item.pid}}" ></image>
+              </view>
+            </view>
+        </view>
+      </view>
+      <view wx:else></view>
+  </view>
+</view>
+<!--新品上市-->
+    <view class='newProduct'>
+      <view class="singal_item_title">
+        <text>{{newArrivalText}}</text>
+      </view>
+      <view class="newProduct_datail" wx:for="{{newarrivalArray}}">
+          <view class="productImage">
+            <image src="{{item.productImg[0].piurl}}"  data-pid="{{item.pid}}"   bindtap='recommentClik' class="product_image"></image>
+          </view>
+          <view class="product_text">
+            <view class="desText"><text>{{item.pdescribe}}</text></view>
+            <view class="single_goods_price"><text>￥{{item.psellprice}}</text></view>
+            <view class="single_goods_address">
+              <text class="oldPrice">￥{{item.pcostprice}}</text>
+              <view class="carImgWrap">
+                  <text>已销售{{item.pcount}}件</text>
+              </view>
+            </view>
+          </view>
+      </view>
+    </view>
+    <!--底部弹出框-->
+      <!--屏幕背景变暗的背景  -->
+      <view class="commodity_screen" wx:if="{{chooseSize}}" bindtap='hideModal'></view>
+      <!--弹出框  -->
+      <view  class="commodity_attr_box" wx:if="{{chooseSize}}" animation='{{animationData}}'>
+            <view >
+                <view class="single_goods" >
+                        <view class="single_image_wrap" >
+                          <image src="{{product.productImg[0].piurl}}" data-pid="{{product.pid}}"   bindtap='recommentClik' class="single_goods_image"></image>
+                        </view>
+                      <view class="single_goods_infor">
+                         <view class="deleLabrl">
+                          <view class="single_goods_name">
+                            <text>{{product.pdescribe}}</text>
+                          </view>
+                          <view class="deleIcon">
+                            <icon type="cancel" size="20" bindtap='hideModal'/>
+                          </view>
+                        </view>
+                        <view class="single_goods_price">
+                          <text>¥{{product.psellprice}}</text>
+                        </view>
+                        <view class="single_goods_address">
+                          <text >库存:{{product.pstock}}</text>
+                          <view class="carImgWrap">
+                            <text>销量:{{product.pcount}}件</text>
+                          </view>
+                        </view>
+                      </view>
+                </view>
+            </view>
+            <view class="car_item_bot">
+                <view class="countall">
+                  <text class="car_item_price">购买数量</text>
+                  <view class="countview">
+                      <span class="car_item_operate">
+                      <span class="car_item_reduce car_item_btn" data-alpha-beta="{{count}}" bindtap="carReduce">-</span>
+                      <span class="car_item_btn" data-alpha-beta="{{count}}" bindtap="carRemove">{{count}}</span>
+                      <span class="car_item_add car_item_btn" data-alpha-beta="{{count}}" bindtap="carAdd">+</span>
+                    </span>
+                  </view>
+               </view>
+          </view>
+          <view class="btntype">
+              <view class="goods_half_half orange"  data-alpha-beta="{{count}}" bindtap="addCart">加入购物车</view>
+              <view class="goods_half_half red">立即购买</view>
+          </view>
+           
+    </view>
+ 

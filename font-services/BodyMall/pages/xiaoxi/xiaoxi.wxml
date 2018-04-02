@@ -1,0 +1,48 @@
+<view>
+    <view wx:if="{{carArray.length <= 0}}">
+        <view class="container">
+            <image src="{{cartImg}}" class="cart-image"/>
+            <view>购物车空空如也</view>
+          </view>
+          <view bindtap='goIndex'>
+              <view class="goods_all_all red"><text class="shopss">去逛逛</text></view>
+          </view> 
+    </view>
+    <view wx:else>
+      <view class="car_item_wrap" wx:for="{{carArray}}" >
+        <view class="car_image_wrap">
+            <image src="{{item.product.productImg[0].piurl}}" class="car_item_image"></image>
+        </view>
+        <view class="car_item_title">
+            <view>{{item.product.pdescribe}}</view>
+        </view>
+        <view class="countView">
+        	<text class="car_item_price">￥{{item.product.psellprice}}</text>
+            <view>
+                <view class="deleLabrl">
+                    <view class="single_goods_name">
+                      <span class="car_item_operate">
+                        <span class="car_item_reduce car_item_btn" data-alpha-beta="{{index}}" bindtap="carReduce">-</span>
+                        <span class="car_item_btn" data-alpha-beta="{{index}}" bindtap="carRemove">{{item.count}}</span>
+                        <span class="car_item_add car_item_btn" data-alpha-beta="{{index}}" bindtap="carAdd">+</span>
+                      </span>
+                    </view>
+                    <view class="deleIcon">
+                      <icon type="cancel" size="20" data-alpha-beta="{{index}}" bindtap='removeCart'/>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    </view>
+    <view wx:if="{{carArray.length > 0}}">
+      <view class="car_bot">
+        <view class="car_bot_wrap">
+          总价
+          <span class="car_order_confirm" bindtap="toPay">立即支付</span>
+          <span class="car_total_money">¥{{totalMoney}}</span>
+        </view>
+      </view>
+  </view>
+</view>
+

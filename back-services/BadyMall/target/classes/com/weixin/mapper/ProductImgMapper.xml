@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weixin.mapper.ProductImgMapper">
+    <resultMap type="com.weixin.bean.ProductImg" id="baseResultMap">
+        <id column="piid" property="piid"></id>
+        <result column="piurl" property="piurl"></result>
+        <result column="pid" property="pid"></result>
+    </resultMap>
+    <select id="listModel"  resultMap="baseResultMap">
+        <![CDATA[
+			select * from productimg
+		  	]]>
+    </select>
+    <select id="listProductImgByPid" parameterType="java.lang.Integer" resultMap="baseResultMap">
+           <![CDATA[
+			select * from productimg
+		  	]]>
+            <where>
+                pid = #{pid}
+            </where>
+    </select>
+    <select id="getModel" parameterType="java.lang.Integer" resultType="com.weixin.bean.ProductImg">
+        <![CDATA[
+			select * from productimg
+		]]>
+        <where>
+            piid = #{piid}
+        </where>
+    </select>
+
+    <update id="updateModel" parameterType="com.weixin.bean.ProductImg">
+        update productimg
+        <trim prefix="set" suffixOverrides=",">
+            <if test="pid!=null">pid=#{pid},</if>
+            <if test="piurl!=null">piurl=#{piurl},</if>
+        </trim>
+    </update>
+
+    <delete id="deleteModel" parameterType="com.weixin.bean.ProductImg">
+        <![CDATA[
+			 delete from productimg WHERE piid=#{piid}
+		]]>
+    </delete>
+</mapper>

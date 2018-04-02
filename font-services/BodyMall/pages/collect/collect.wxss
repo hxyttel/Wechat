@@ -1,0 +1,172 @@
+.car_item_wrap {
+    position: relative;
+    height: 100px;
+    background-color: #FFF;
+    padding-left: 100px;
+    border-bottom: 1px solid #E7E7EB;
+}
+.car_image_wrap {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.car_item_image {
+    width: 80px;
+    height: 80px;
+}
+.car_item_title {
+    padding: 10px 10px 10px 0;
+    font-size: 14px;
+}
+.car_item_bot {
+   padding: 0 10px 0 0;
+   height: 28px;
+   line-height: 28px;
+}
+.car_item_price {
+    color: #ff0000;
+    font-size: 14px;
+}
+.car_item_operate {
+    display: inline-block;
+    float: right;
+}
+.car_item_btn {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 28px;
+    border: 1px solid #B2B2B2;
+    color: #929292;
+}
+.car_item_num {
+    display: inline-block;
+    width: 40px;
+    height: 26px;
+    text-align: center;
+    line-height: 28px;
+    border-top: 1px solid #B2B2B2;
+    border-bottom: 1px solid #B2B2B2;
+    font-size: 14px;
+    position: relative;
+    color: #929292;
+}
+
+.car_bot {
+    position: fixed;
+    width: 100%;
+    background-color: #FFF;
+    bottom: 0;
+    border-bottom: 1px solid #E5E5E5;
+    font-size: 14px;
+}
+.car_bot_wrap {
+    padding: 10px;
+    height: 30px;
+    line-height: 30px;
+}
+.car_order_confirm {
+    display: inline-block;
+    float: right;
+    background-color: #ff7e3a;
+    color: #FFF;
+    border-radius: 3px;
+    width: 80px;
+    text-align: center;
+}
+.car_total_money {
+    display: inline-block;
+    color: #FF0000;
+    margin-left: 5px;
+}
+.car_list_bot {
+    background-color: #FFF;
+    padding: 10px;
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+    padding-right: 50px;
+    text-align: right;
+    position: relative;
+    color: #929292;
+}
+.arrow_wrap {
+    position: absolute;
+    width: 50px;
+    height: 45px;
+    right: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: 17px 14px;
+}
+.red {
+    color: #FF0000;
+}
+.car_item_del {
+    display: inline-block;
+    width:15px;
+    height: 28px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    margin-left: 15px;
+    background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACcUlEQVRoQ+2YT27TUBCHf2N4zQrwEolaKhuIV7QnwDkB4gSk4gBwBLgBHAA13KA3SDgBYZXCBoRBYum2K/KUDrKJU9ukPL9/QkbO0vbY3zfz5uVpCB3/Ucf50Qv86wr2FegrYJmB/38JnURiCkI4OJOjuxkyy4Qpwz+HCH/eFFMwsmEqR6oAZQUWkZgR0UOA574lNvCgfWZ+F6cysRYoXnpDzED0wKdEFR7MHwbnMmlTcWUF8gz4ljCFz9laCeQPLm5jj3bEHKBbLitRgwefDs7kXpvMl0urtUAe8OmO2L+4hlkhwTgepsvHqjWquv97k6AE4NNgheTedzlXxVTvawk0JYh5cj+VhzofrD77MRJHTDQ2hddaQtUPVythKuEC3ljAthKu4K0ETCVcwlsL6Eq4hncicClB74sXXtHYPuCdCRT/E5EYE9FR0ewX/Hr4TT4vG/8SHmDmwziVE9OdqxmnvY3+7cNViRJ02zVX8E4rUELVKsH8BkRP83uuM2/0T9w2czUJj/BeKvBHP3RNoNNLqNNNXIMHXsZfly/KnjnZFa8Q0DMfzexkG13sXk8oCKZrwLdxKsfNhl9EYkJET/LrwYoPdI/NV20g1gLrk+kUoJCZt8JXtti1BGfBCiMXElYCOvC+JIwFTOB9SBgJ2MC7ltAWcAHvUkJLwCX8ZouNdo5BeASYNXZrgSq8zuBJdX5qzJwyXsqD+Ae+qOK0DnM2g6c2IDaDM2UFfMOXgqYSSoHN4EljXtkm69ueqUkwz9xNp4Gw7bDVFL5ZCQYyJ9NpWyDf8col5BvA9v29gG0GbeP7Cthm0Da+r4BtBm3jfwGw2PtAwoEuAgAAAABJRU5ErkJggg==');
+    
+}
+.deleLabrl{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.countView{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;/*垂直居中*/
+  justify-content: center;/*水平居中*/
+  background-color: #F2f2f2;
+  color: #939393;
+}
+.container .cart-image {
+  width: 120px;
+  height: 120px;
+}
+.goods_all_all {
+  width: 100%;
+  float: left;
+  height: 50px;
+  font-size: 12px;
+  line-height: 50px;
+  text-align: center;
+  color: #FFF;
+  margin-top: 5px
+}
+.red {
+  background-color: #ff3300;
+}
+.shopss{
+  font-size: 20px
+}
+.goods_collect_btn {
+  height: 40px;
+  width: 70px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  border-left: 1px solid #E5E5E5;
+  text-align: center;
+  font-size: 12px;
+  line-height: 14px;
+}
+.goods_collect_img {
+  width: 24px;
+  height: 24px;
+}

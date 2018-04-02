@@ -1,0 +1,24 @@
+<view class="personal_info">
+	<view class="photo_wrap">
+		<image src="{{userInfo.avatarUrl}}" class="photo"></image>
+	</view>
+	<view class="nickname">
+		{{userInfo.nickName}}
+	</view>
+</view>
+<view class="wode_item_wrap">
+	<view class="wode_item">
+    <view bindtap='collectPage'>我的收藏
+    </view>
+		<view >我的订单
+    </view>
+    <view >我的地址
+    </view>
+    <view >联系客服
+    </view>
+    <view >关于我们
+    </view>
+    <view class="wode_out" bindtap="addCartCollect">退出</view>
+    <span class="arrow_wrap"></span>
+	</view>
+</view>

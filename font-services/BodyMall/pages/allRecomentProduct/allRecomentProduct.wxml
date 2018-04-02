@@ -1,0 +1,35 @@
+<view class='page_row' bindtap="suo">  
+  <view class="search">  
+    <view class="df search_arr">  
+      <icon class="searchcion" size='20' type='search'></icon>  
+      <input type="text" name='pname'  bindinput="pnameConfirm" placeholder="请输入关键字"  />  
+    </view>  
+  </view>  
+  <view class='sousuo' bindtap='searchRecoName'>搜索</view>  
+</view> 
+<view class='newProduct' >
+      <view class="singal_item_title">
+        <text>{{newArrivalText}}</text>
+      </view> 
+      <view wx:if="{{listRecoment.length >0}}">
+          <view class="newProduct_datail" wx:for="{{listRecoment}}" >
+              <view class="productImage">
+                <image src="{{item.pUrl}}" class="product_image"></image>
+              </view>
+              <view class="product_text">
+                <view class="desText"><text>{{item.pdescribe}}</text></view>
+                <view class="single_goods_price"><text>￥{{item.psellprice}}</text></view>
+                <view class="single_goods_address">
+                  <text class="oldPrice">￥{{item.pcostprice}}</text>
+                  <view class="carImgWrap">
+                      <text>已销售{{item.pcount}}件</text>
+                  </view>
+                </view>
+              </view>
+          </view>
+      </view>
+      <view wx:else>
+          <text>亲,不好意思没有找到你需要的!</text>
+      </view>
+</view>
+ 

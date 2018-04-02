@@ -1,0 +1,38 @@
+<view>
+    <view wx:if="{{collectArray.length <= 0}}">
+        <view class="container">
+            <image src="{{cartImg}}" class="cart-image"/>
+            <view>没有收藏哦</view>
+          </view>
+    </view>
+    <view wx:else>
+      <view class="car_item_wrap" wx:for="{{collectArray}}" >
+        <view class="car_image_wrap">
+            <image src="{{item.productImg[0].piurl}}" class="car_item_image"></image>
+        </view>
+        <view class="car_item_title">
+            <view>{{item.pdescribe}}</view>
+        </view>
+        <view class="countView">
+        	<text class="car_item_price">{{item.pname}}</text>
+            <view>
+              <view class="deleLabrl">
+                  <view class="single_goods_name">
+                      <view class="goods_collect_btn">
+                        <view wx:if="{{iscollect}}">
+                          <image  bindtap="removeCollect" src="../../image/icon-aixin.png" class="goods_collect_img" data-index="{{index}}"></image>
+                        </view>
+                        <view wx:else>
+                          <image bindtap='addCollect' data-index="{{index}}" src="../../image/icon-aixin1.png" class="goods_collect_img"></image>
+                        </view> 
+                        <text wx:if="{{iscollect}}" >取消收藏</text>
+                      <text  wx:else >收藏</text>
+                      </view>
+                  </view>
+              </view>
+            </view>
+        </view>
+    </view>
+    </view>
+</view>
+

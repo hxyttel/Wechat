@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weixin.mapper.CartMapper">
+    <resultMap type="com.weixin.bean.Cart" id="baseResultMap">
+        <id column="cid" property="cid"></id>
+        <result column="uid" property="uid"></result>
+        <result column="pid" property="pid"></result>
+        <result column="ccount" property="ccount"></result>
+    </resultMap>
+    <select id="listModel"  resultMap="baseResultMap">
+        <![CDATA[
+			select * from cart c ,user u ,product p
+		  	]]>
+        <where>
+            c.uid = u.uid ,
+            c.pid = p.pid
+        </where>
+    </select>
+
+    <select id="listProductImgByPid" parameterType="java.lang.Integer" resultMap="baseResultMap">
+        <![CDATA[
+			select * from cart
+		  	]]>
+        <where>
+            cid = #{cid}
+        </where>
+    </select>
+    <select id="getModel" parameterType="java.lang.Integer" resultType="com.weixin.bean.Cart">
+        <![CDATA[
+			select * from cart
+		]]>
+        <where>
+            pid = #{pid}
+        </where>
+    </select>
+    <insert id="saveModel" parameterType="com.weixin.bean.Cart">
+        INSERT  into cart(uid,pid,ccount) VALUE (#{uid},#{pid},#{ccount})
+    </insert>
+    <update id="updateModel" parameterType="com.weixin.bean.Cart">
+        update cart
+        <trim prefix="set" suffixOverrides=",">
+            <if test="ccount!=null">ccount=#{ccount},</if>
+        </trim>
+        <where>cid = #{cid}</where>
+    </update>
+    <select id="listUserCart" parameterType="java.lang.Integer" resultMap="baseResultMap">
+    <![CDATA[
+			select * from user u ,cart c
+		]]>
+    <where>
+        c.uid = u.uid and c.uid=#{uid}
+    </where>
+    </select>
+    <delete id="deleteModel" parameterType="com.weixin.bean.Cart">
+        <![CDATA[
+			 delete from cart WHERE cid=#{cid}
+		]]>
+    </delete>
+</mapper>
